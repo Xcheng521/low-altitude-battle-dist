@@ -11,21 +11,100 @@
   if(needsPolyfill){
     document.write('<script src="./assets/polyfills.js"><\/script>');
   }
-})();</script><script>window.appId = "low-altitude-battle-desktop";
-    window.userId = "";
-    window.tenantId = "";
-    window.userName = "";
-    window.csrfToken = "";
-    window.ENVIRONMENT = "desktop";
-    window.__BASENAME__ = "";
+})();</script><script>window.appId = "{{appId}}";
+    window.userId = "{{userId}}";
+    window.tenantId = "{{tenantId}}";
+    window.userName = "{{userName}}";
+    window.csrfToken = "{{csrfToken}}";
+    window.ENVIRONMENT = "{{environment}}";
+    window.__BASENAME__ = "{{basename}}";
     const appInfo = {
-      name: "低空攻防·数字孪生对抗平台",
-      avatar: "{./favicon.svg}",
-      description: "反无人机红蓝对抗三维仿真教学系统",
+      name: "{{appName}}",
+      avatar: "{{{appAvatar}}}",
+      description: "{{appDescription}}",
     };
     if (appInfo.name) {
       window._appInfo = appInfo;
-    }</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>低空攻防·数字孪生对抗平台</title><meta name="description" content="反无人机红蓝对抗三维仿真教学系统"><meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self' 'unsafe-inline' blob:; script-src-elem 'self' 'unsafe-inline' blob:; style-src 'self' 'unsafe-inline'; worker-src 'self' blob: data:; connect-src 'self' blob: data: ws: wss:; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' data: blob:; object-src 'none'; base-uri 'self';"><script>// 若宿主环境（Electron 主进程 / 部署平台）已写入 __BASENAME__ 则跳过，否则留空由前端运行时探测
+    }</script><script>(function(g){
+  if(!window[g]){var q=[];window[g]=function(){q.push([].slice.call(arguments));};window[g].q=q;}
+  window.__slardarErrBuf=window.__slardarErrBuf||[];
+  var ref=document.referrer||'';
+  function _cap(err){
+    if(window[g]&&!window[g].q){
+      window[g]('captureException',err instanceof Error?err:new Error(String(err)),{source:'runtime-error',referrer:ref});
+    }else{
+      (window.__slardarErrBuf=window.__slardarErrBuf||[]).push(err);
+    }
+  }
+  window.addEventListener('error',function(e){
+    if(e.error==null&&e.target instanceof Element){
+      var t=e.target,url=t.src||t.href||'';
+      if(url)window[g]('captureException',new Error('Resource load failed: '+url),{team:'miaoda-sdk',source:'resource-error',resourceType:t.tagName.toLowerCase(),resourceUrl:url,referrer:ref});
+      return;
+    }
+    if(e.error!=null){
+      var err=e.error;
+      if(e.filename&&typeof err.stack==='string'&&err.stack.indexOf(e.filename)<0){
+        try{err.stack+='\n    at '+e.filename+':'+(e.lineno||0)+':'+(e.colno||0);}catch(ex){}
+      }
+      _cap(err);
+    }else{
+      var msg=e.message||'Script error';
+      var err=new Error(msg);
+      if(e.filename)err.stack=msg+'\n    at '+e.filename+':'+(e.lineno||0)+':'+(e.colno||0);
+      _cap(err);
+    }
+  },true);
+  window.addEventListener('unhandledrejection',function(e){
+    if(e.reason!=null)_cap(e.reason instanceof Error?e.reason:new Error(String(e.reason)));
+  });
+})('KSlardarWeb');</script><script>const slardarScript = document.createElement('script');
+    slardarScript.src = 'https://lf3-short.ibytedapm.com/slardar/fe/sdk-web/browser.cn.js?bid=apaas_miaoda&globalName=KSlardarWeb';
+    slardarScript.crossOrigin = 'anonymous';
+    slardarScript.onload = function() {
+      if (window.KSlardarWeb) {
+        window.KSlardarWeb('context.merge', {
+          tenantId: window.tenantId ?? '',
+          appId: window.appId ?? '',
+          stack_version: "0.1.0",
+          app_type: 6,
+          arch_type: 2,
+        });
+        window.KSlardarWeb('init', {
+          bid: 'apaas_miaoda',
+          env: window.ENVIRONMENT || 'online',
+          userId: window.userId ?? '',
+        });
+        window.KSlardarWeb('start');
+        // Flush errors captured before the SDK finished loading
+        var buf = window.__slardarErrBuf || [];
+        window.__slardarErrBuf = [];
+        buf.forEach(function(err) {
+          window.KSlardarWeb('captureException', err instanceof Error ? err : new Error(String(err)), { source: 'pre-sdk-error', referrer: document.referrer || '' });
+        });
+      }
+    };
+    slardarScript.onerror = function() {
+      console.warn('Failed to load Slardar script');
+    };
+    document.head.appendChild(slardarScript);</script><script src="https://sf3-scmcdn-cn.feishucdn.com/obj/unpkg/byted/performance/0.2.3/dist/performance.iife.js" data-app-name="builderV3" crossorigin="anonymous" defer="defer"></script><script>(function (win, export_obj) {
+    win['LogAnalyticsObject'] = export_obj;
+    if (!win[export_obj]) {
+      function _collect() { _collect.q.push(arguments); }
+      _collect.q = _collect.q || [];
+      win[export_obj] = _collect;
+    }
+    win[export_obj].l = +new Date();
+  })(window, 'collectEvent');
+
+  const teaScript = document.createElement('script');
+  teaScript.src = 'https://lf3-cdn-tos.bytescm.com/obj/static/log-sdk/collect/5.1/collect.js';
+  teaScript.crossOrigin = 'anonymous';
+  teaScript.async = true;
+  teaScript.onerror = function() {
+    console.warn('Failed to load Tea script');
+  };
+  document.head.appendChild(teaScript);</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{appName}}</title><meta name="description" content="{{appDescription}}"><meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self' 'unsafe-inline' blob:; script-src-elem 'self' 'unsafe-inline' blob:; style-src 'self' 'unsafe-inline'; worker-src 'self' blob: data:; connect-src 'self' blob: data: ws: wss:; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' data: blob:; object-src 'none'; base-uri 'self';"><script>// 若宿主环境（Electron 主进程 / 部署平台）已写入 __BASENAME__ 则跳过，否则留空由前端运行时探测
       if (typeof window !== 'undefined' && !window.__BASENAME__) {
         window.__BASENAME__ = '';
-      }</script><script type="module" crossorigin src="./assets/index-BbJqH4uC.js"></script><link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-B0Z9INg1.js"><link rel="modulepreload" crossorigin href="./assets/vendor-D9Z96QR9.js"><link rel="modulepreload" crossorigin href="./assets/vendor-icons-Bdti9k9x.js"><link rel="modulepreload" crossorigin href="./assets/vendor-three-CFTrb60D.js"><link rel="modulepreload" crossorigin href="./assets/vendor-motion-fa9GviP9.js"><link rel="stylesheet" crossorigin href="./assets/index-D6C53j4H.css"><meta property="og:title" content="低空攻防·数字孪生对抗平台"><meta property="og:description" content="反无人机红蓝对抗三维仿真教学系统"><meta property="og:image" content="./favicon.svg"><link rel="icon" href="./favicon.svg"></head><body><div id="root"></div></body></html>
+      }</script><script type="module" crossorigin src="./assets/index-B55rUsdn.js"></script><link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-B0Z9INg1.js"><link rel="modulepreload" crossorigin href="./assets/vendor-D9Z96QR9.js"><link rel="modulepreload" crossorigin href="./assets/vendor-icons-Bdti9k9x.js"><link rel="modulepreload" crossorigin href="./assets/vendor-three-CIy1znE5.js"><link rel="modulepreload" crossorigin href="./assets/vendor-motion-fa9GviP9.js"><link rel="stylesheet" crossorigin href="./assets/index-D6C53j4H.css"><meta property="og:title" content="{{appName}}"><meta property="og:description" content="{{appDescription}}"><meta property="og:image" content="{{appAvatar}}"><link rel="icon" href="{{appAvatar}}"></head><body><div id="root"></div></body></html>
