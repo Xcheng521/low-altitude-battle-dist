@@ -1,6 +1,10 @@
-import { logger } from '@lark-apaas/client-toolkit-lite';
+/* Service Worker - 静态资源缓存 (生产环境生效) */
+/* eslint-disable */
 /**
  * Service Worker —— 静态资源 + 3D 模型/纹理缓存（v2）
+ *
+ * ⚠️ 重要：SW 作用域不支持 ES Module import，所有日志直接用 console。
+ * 禁止在此文件顶部 import 任何模块（import 会导致 SW 注册失败 → 控制台报错）。
  * 策略：
  *  1. 同源静态资源（JS/CSS/字体/图片）→ Stale-While-Revalidate
  *  2. 3D 模型 / 纹理（glb/gltf/webp/png/jpg）→ Cache First（大文件不重复下载）
@@ -184,7 +188,7 @@ function cacheFirst(request, cacheName) {
       }
       return response;
     } catch (err) {
-      logger.warn('[SW.cacheFirst] 下载失败:', { arg0: request.url, arg1: String(err) });
+      console.warn('[SW.cacheFirst] 下载失败:', { arg0: request.url, arg1: String(err) });
       return cached || Response.error();
     }
   });
@@ -210,7 +214,7 @@ function networkFirstWithCache(request, cacheName) {
       }
       return response;
     } catch (err) {
-      logger.warn('[SW.networkFirstWithCache] 网络失败，回退缓存:', { arg0: request.url, arg1: String(err) });
+      console.warn('[SW.networkFirstWithCache] 网络失败，回退缓存:', { arg0: request.url, arg1: String(err) });
       const cached = await cache.match(request);
       return cached || Response.error();
     }
@@ -266,9 +270,9 @@ async function trimCache(cacheName) {
       deleted++;
     }
 
-    logger.info(`[SW.trimCache] 淘汰 ${deleted}/${keys.length} 条，活跃白名单 ${activeAssets.size} 条`);
+    console.info(`[SW.trimCache] 淘汰 ${deleted}/${keys.length} 条，活跃白名单 ${activeAssets.size} 条`);
   } catch (err) {
-    logger.warn('[SW.trimCache] LRU 淘汰异常:', String(err));
+    console.warn('[SW.trimCache] LRU 淘汰异常:', String(err));
   }
 }
 
