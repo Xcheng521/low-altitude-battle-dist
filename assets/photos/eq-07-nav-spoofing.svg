@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="50%" stop-color="#0d1f35"/>
+      <stop offset="100%" stop-color="#061018"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a6a7a"/>
+      <stop offset="50%" stop-color="#3d4a5c"/>
+      <stop offset="100%" stop-color="#1e2836"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6b7c8d"/>
+      <stop offset="50%" stop-color="#4a5868"/>
+      <stop offset="100%" stop-color="#2d3a4a"/>
+    </linearGradient>
+    <radialGradient id="glow-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <g opacity="0.1" stroke="#00d4ff" stroke-width="0.5">
+    <line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/><line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+  </g>
+  <circle cx="400" cy="280" r="170" fill="url(#glow-green)" opacity="0.4"/>
+  <g transform="translate(400 300)">
+    <ellipse cx="0" cy="60" rx="150" ry="15" fill="#0a1018" opacity="0.6"/>
+    <path d="M-130 -5 L130 -5 L110 -50 L-110 -50 Z" fill="url(#body)" stroke="#6b7c8d" stroke-width="1.5"/>
+    <path d="M-110 -50 L110 -50 L90 -80 L-90 -80 Z" fill="#3d4a5c" stroke="#5a6a7a"/>
+    <rect x="-70" y="-90" width="140" height="15" fill="#1a202c" stroke="#5a6a7a" rx="2"/>
+    <rect x="-60" y="-87" width="20" height="9" fill="#00ff88" opacity="0.5">
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-30" y="-87" width="20" height="9" fill="#00ff88" opacity="0.3"/>
+    <rect x="10" y="-87" width="20" height="9" fill="#00ff88" opacity="0.6">
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="40" y="-87" width="20" height="9" fill="#00ff88" opacity="0.4"/>
+    <polygon points="0,-120 20,-90 -20,-90" fill="url(#metal)" stroke="#6b7c8d"/>
+    <rect x="-8" y="-130" width="16" height="20" fill="#2d3748" stroke="#5a6a7a"/>
+    <circle cx="0" cy="-135" r="6" fill="#00ff88" opacity="0.8"><animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/></circle>
+    <line x1="-130" y1="-15" x2="-200" y2="10" stroke="#4a5568" stroke-width="3"/>
+    <line x1="130" y1="-15" x2="200" y2="10" stroke="#4a5568" stroke-width="3"/>
+    <ellipse cx="-205" cy="12" rx="25" ry="7" fill="#1a202c" stroke="#5a6a7a"/>
+    <ellipse cx="205" cy="12" rx="25" ry="7" fill="#1a202c" stroke="#5a6a7a"/>
+    <g opacity="0.3" stroke="#00ff88" stroke-width="1" stroke-dasharray="4 4" fill="none">
+      <path d="M0 -140 Q-40 -180 -80 -160"/>
+      <path d="M0 -140 Q40 -180 80 -160"/>
+      <path d="M0 -140 Q-60 -200 -120 -170"/>
+      <path d="M0 -140 Q60 -200 120 -170"/>
+    </g>
+  </g>
+  <g fill="#00ff88" font-family="monospace" font-size="11" opacity="0.8">
+    <text x="40" y="48">NAVIGATION SPOOFING POD</text>
+    <text x="40" y="64" opacity="0.5">GPS/北斗 导航诱骗</text>
+    <text x="760" y="48" text-anchor="end">DECOY MODE</text>
+    <text x="760" y="64" opacity="0.5" text-anchor="end">EQ-07</text>
+    <text x="40" y="570" opacity="0.4">UAV-BORNE</text>
+  </g>
+  <path d="M0 28 L28 28 L28 0" fill="none" stroke="#00d4ff" stroke-width="2"/>
+  <path d="M800 572 L772 572 L772 600" fill="none" stroke="#00d4ff" stroke-width="2"/>
+</svg>

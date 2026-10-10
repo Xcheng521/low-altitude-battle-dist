@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="50%" stop-color="#0d1f35"/>
+      <stop offset="100%" stop-color="#061018"/>
+    </linearGradient>
+    <linearGradient id="dbody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a5568"/>
+      <stop offset="50%" stop-color="#2d3748"/>
+      <stop offset="100%" stop-color="#1a202c"/>
+    </linearGradient>
+    <linearGradient id="dmetal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#718096"/>
+      <stop offset="50%" stop-color="#4a5568"/>
+      <stop offset="100%" stop-color="#2d3748"/>
+    </linearGradient>
+    <radialGradient id="dglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff4444" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ff4444" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#ff4444" stroke-width="0.5">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+  </g>
+  <circle cx="400" cy="280" r="150" fill="url(#dglow)" opacity="0.35"/>
+  <g transform="translate(400 300)">
+    <ellipse cx="0" cy="55" rx="120" ry="10" fill="#0a1018" opacity="0.5"/>
+    <ellipse cx="-110" cy="-15" rx="55" ry="10" fill="none" stroke="#4a5568" stroke-width="1.5" opacity="0.4"/>
+    <ellipse cx="-110" cy="-15" rx="50" ry="3" fill="#718096" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="0.15s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle cx="-110" cy="-15" r="8" fill="#2d3748" stroke="#5a6a7a"/>
+    <circle cx="-110" cy="-15" r="4" fill="#1a202c"/>
+    <ellipse cx="110" cy="-15" rx="55" ry="10" fill="none" stroke="#4a5568" stroke-width="1.5" opacity="0.4"/>
+    <ellipse cx="110" cy="-15" rx="50" ry="3" fill="#718096" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="0.15s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle cx="110" cy="-15" r="8" fill="#2d3748" stroke="#5a6a7a"/>
+    <circle cx="110" cy="-15" r="4" fill="#1a202c"/>
+    <ellipse cx="-85" cy="45" rx="55" ry="10" fill="none" stroke="#4a5568" stroke-width="1.5" opacity="0.4"/>
+    <ellipse cx="-85" cy="45" rx="50" ry="3" fill="#718096" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="0.15s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle cx="-85" cy="45" r="8" fill="#2d3748" stroke="#5a6a7a"/>
+    <circle cx="-85" cy="45" r="4" fill="#1a202c"/>
+    <ellipse cx="85" cy="45" rx="55" ry="10" fill="none" stroke="#4a5568" stroke-width="1.5" opacity="0.4"/>
+    <ellipse cx="85" cy="45" rx="50" ry="3" fill="#718096" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="0.15s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle cx="85" cy="45" r="8" fill="#2d3748" stroke="#5a6a7a"/>
+    <circle cx="85" cy="45" r="4" fill="#1a202c"/>
+    <path d="M-110 -15 L-45 -5 L-45 35 L-85 45 Z" fill="#2d3748" stroke="#4a5568"/>
+    <path d="M110 -15 L45 -5 L45 35 L85 45 Z" fill="#2d3748" stroke="#4a5568"/>
+    <ellipse cx="0" cy="15" rx="45" ry="30" fill="url(#dbody)" stroke="#5a6a7a"/>
+    <ellipse cx="0" cy="-15" rx="30" ry="15" fill="#3d4a5c" stroke="#5a6a7a"/>
+    <ellipse cx="0" cy="-25" rx="18" ry="8" fill="#0a0f18" stroke="#00d4ff" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-25" rx="10" ry="5" fill="#00d4ff" opacity="0.5"/>
+    <ellipse cx="0" cy="25" rx="15" ry="12" fill="#0a0f18" stroke="#00d4ff" stroke-width="1.5"/>
+    <ellipse cx="0" cy="25" rx="8" ry="6" fill="#00d4ff" opacity="0.4">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <rect x="-25" y="0" width="50" height="6" fill="#1a202c" stroke="#3d4a5c" rx="1"/>
+    <rect x="-20" y="1.5" width="15" height="3" fill="#00d4ff" opacity="0.5"/>
+    <rect x="0" y="1.5" width="18" height="3" fill="#ffaa00" opacity="0.4"/>
+    <rect x="8" y="-50" width="6" height="20" fill="#2d3748" stroke="#5a6a7a"/>
+    <line x1="11" y1="-50" x2="11" y2="-65" stroke="#00d4ff" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  <g fill="#ffaa00" font-family="monospace" font-size="11" opacity="0.8">
+    <text x="40" y="48">RECONNAISSANCE DRONE</text>
+    <text x="40" y="64" opacity="0.5">侦察多旋翼 · 光电吊舱</text>
+    <text x="760" y="48" text-anchor="end">ENDURANCE: 60min</text>
+    <text x="760" y="64" opacity="0.5" text-anchor="end">UAV-07</text>
+    <text x="40" y="570" opacity="0.4">HOSTILE · SCOUT</text>
+  </g>
+  <path d="M0 28 L28 28 L28 0" fill="none" stroke="#ff4444" stroke-width="2"/>
+  <path d="M800 572 L772 572 L772 600" fill="none" stroke="#ff4444" stroke-width="2"/>
+</svg>
