@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Screenshot Helper</title>
+<style>
+  body { margin: 0; background: #000; overflow: hidden; }
+  iframe { width: 100vw; height: 100vh; border: 0; }
+</style>
+</head>
+<body>
+<iframe id="f" src="/battlefield?diag=0&solo=1"></iframe>
+<script>
+// 等待 iframe 加载完成，然后控制相机
+const iframe = document.getElementById('f');
+let tried = 0;
+
+function tryControl() {
+  tried++;
+  try {
+    const win = iframe.contentWindow;
+    const engine = win.__battleEngine;
+    if (engine && engine.flyToPreset && typeof engine.flyToPreset === 'function') {
+      // 获取视角参数
+      const params = new URLSearchParams(window.location.search);
+      const preset = params.get('preset') || 'low';
+      const waitMs = parseInt(params.get('wait') || '3000');
+      
+      engine.flyToPreset(preset, 0.1); // 快速切到预设视角
+      
+      // 额外调整：让相机看向指挥楼/营房/仓库区（基地中心偏东）
+      setTimeout(() => {
+        if (preset === 'closeup') {
+          // 近景：站在基地南侧向北看指挥楼和营房
+          engine.camera.position.set(-30, 12, -30);
+          if (engine.camTarget) {
+            engine.camTarget.set(0, 6, -70);
+          }
+          engine.camera.lookAt(0, 6, -70);
+        } else if (preset === 'panorama') {
+          // 全景：3/4 斜视，能看到整个基地
+          engine.camera.position.set(180, 100, 150);
+          if (engine.camTarget) {
+            engine.camTarget.set(0, 5, -60);
+          }
+          engine.camera.lookAt(0, 5, -60);
+        }
+        // 标记完成
+        window.__screenshotReady = true;
+      }, waitMs);
+      return true;
+    }
+  } catch(e) {
+    // cross-origin or not ready
+  }
+  if (tried < 60) {
+    setTimeout(tryControl, 200);
+  }
+}
+
+iframe.onload = tryControl;
+</script>
+</body>
+</html>
